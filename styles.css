@@ -1,0 +1,404 @@
+:root {
+    --pink: #ffb6c1;
+    --black: #1a1a1a;
+    --red: #ff0000;
+    --green: #2e8b57;
+    --light-pink: #fff0f5;
+    --dark-green: #1e4d2b;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background-color: var(--light-pink);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--red);
+    animation: fadeIn 1s ease-in;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.green-title {
+    color: var(--green);
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--pink) 100%);
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.portrait {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portrait:hover {
+    transform: scale(1.05);
+}
+
+.design {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Moments Section */
+.moments {
+    padding: 80px 0;
+    background: var(--red);
+    color: var(--white);
+}
+
+.moments h2 {
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.ocean-logo {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.ocean-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Congratulation Section */
+.congratulation {
+    padding: 80px 0;
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.congratulation-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.signature {
+    margin-top: 40px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимированные сердечки */
+.heart {
+    position: fixed;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+    font-size: 20px;
+    color: var(--red);
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 20%; animation-delay: 2s; }
+.heart:nth-child(3) { left: 30%; animation-delay: 4s; }
+.heart:nth-child(4) { left: 40%; animation-delay: 6s; }
+.heart:nth-child(5) { left: 50%; animation-delay: 8s; }
+.heart:nth-child(6) { left: 60%; animation-delay: 10s; }
+.heart:nth-child(7) { left: 70%; animation-delay: 12s; }
+.heart:nth-child(8) { left: 80%; animation-delay: 14s; }
+.heart:nth-child(9) { left: 90%; animation-delay: 16s; }
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Age Number with Fireworks */
+.age-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: -20px;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px;
+    animation: firework 1.5s ease-out infinite;
+    opacity: 0;
+}
+
+.firework:nth-child(1) { left: 30%; top: 20%; animation-delay: 0s; color: var(--red); }
+.firework:nth-child(2) { left: 50%; top: 10%; animation-delay: 0.3s; color: var(--pink); }
+.firework:nth-child(3) { left: 70%; top: 20%; animation-delay: 0.6s; color: var(--green); }
+.firework:nth-child(4) { left: 20%; top: 40%; animation-delay: 0.9s; color: var(--red); }
+.firework:nth-child(5) { left: 80%; top: 40%; animation-delay: 1.2s; color: var(--pink); }
+.firework:nth-child(6) { left: 30%; top: 60%; animation-delay: 1.5s; color: var(--green); }
+.firework:nth-child(7) { left: 70%; top: 60%; animation-delay: 1.8s; color: var(--red); }
+.firework:nth-child(8) { left: 50%; top: 80%; animation-delay: 2.1s; color: var(--pink); }
+
+@keyframes firework {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1);
+        opacity: 0;
+    }
+}
+
+.firework::before,
+.firework::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px;
+    animation: firework-trail 1.5s ease-out infinite;
+}
+
+.firework::before {
+    transform: translate(-10px, -10px);
+    animation-delay: inherit;
+}
+
+.firework::after {
+    transform: translate(10px, 10px);
+    animation-delay: inherit;
+}
+
+@keyframes firework-trail {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .age-number {
+        font-size: 6rem;
+        margin-bottom: -15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-image {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .portrait {
+        max-width: 300px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 250px;
+    }
+
+    .congratulation-text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .firework {
+        width: 3px;
+        height: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .age-number {
+        font-size: 4rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-image {
+        margin: 20px auto;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .firework {
+        width: 2px;
+        height: 2px;
+    }
+} 
